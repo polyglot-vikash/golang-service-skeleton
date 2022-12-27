@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
+	"sample-app/router"
 
 	"gopkg.in/yaml.v2"
 )
@@ -51,6 +51,6 @@ func main() {
 	fmt.Println("Redis password:", c.Redis.Password)
 	fmt.Println("Server port:", c.Server.Port)
 
-	r := setupRouter()
-	log.Fatal(http.ListenAndServe(":8080", r))
+	router.SetupRouter()
+
 }
